@@ -20,13 +20,7 @@ const sendMail = async (json, type) => {
             from: json.email,
             to: json.adminEmail,
             subject: type === 1 ? json.subject : "New Project Enquiry",
-            html: html_content,
-            attachments: [
-                {
-                    filename: json.originalname,
-                    content: file.buffer,
-                },
-            ],
+            html: html_content
         };
 
         let mailOptionsToResponse = { //MAIL RESPOSNE TO USER 
