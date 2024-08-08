@@ -330,4 +330,4 @@ const sendCv = async (req, res) => {
 
 }
 
-export { signupAdmin, signIn, getAdmin, updateContent, getConentByType, sendEnquiry, sendQuation, sendCv }
+export { signupAdmin, signIn, getAdmin, updateContent, getConentByType, sendEnquiry, sendQuation, sendCv ,getAllContent  }
