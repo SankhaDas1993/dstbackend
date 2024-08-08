@@ -28,8 +28,8 @@ app.use(cors(corsOptions));
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser())
-app.use(bodyParser.json({ extended: true }))
-app.use(bodyParser.urlencoded({ extended: true }))
+app.use(bodyParser.json({ limit: '100mb' }));
+app.use(bodyParser.urlencoded({ limit: '100mb', extended: true }));
 
 connectToDatabase()
 app.use("/api/v1", adminRoute)
