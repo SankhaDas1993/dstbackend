@@ -1,6 +1,6 @@
 import express from 'express';
 import multer from 'multer';
-import { getAdmin, getConentByType, sendCv, sendEnquiry, sendQuation, signIn, signupAdmin, updateContent } from '../../controllers/admin.controller.js';
+import { getAdmin, getConentByType, sendCv, sendEnquiry, sendQuation, signIn, signupAdmin, updateContent,getAllContent } from '../../controllers/admin.controller.js';
 const router = express.Router();
 
 const storage = multer.memoryStorage();
@@ -12,6 +12,7 @@ router.post('/signin',signIn)
 router.put("/update_content",updateContent)
 router.get("/get_content",getConentByType)
 router.get("/get_admin",getAdmin)
+router.get("/getallcontent",getAllContent)
 
 
 //send mail // 
