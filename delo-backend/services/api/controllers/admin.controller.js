@@ -185,9 +185,32 @@ const getConentByType = async (req, res) => {
         console.log(error.stack);
         return res.status(500).send({ message: "Internal Server Error", error: error.stack });
     }
-
-
 }
+
+const getAllContent = async (req, res) => {
+
+    const { key } = req.query
+
+    try {
+        if (!key) {
+            return res.status(400).send({ message: "Key is missing" })
+        }
+        // Find the document by adminId
+        const content = await Content.findOne({ adminId:"DSTADMIN000001" });
+        if (content && content[key] !== undefined) {
+            return res.status(200).json({ message: "Get All Content", success: true, data: content[key] });
+        } else {
+            return res.status(400).json({ message: "No Content", success: false, data: {} });
+        }
+    } catch (error) {
+        console.log(error.stack);
+        return res.status(500).send({ message: "Internal Server Error", error: error.stack });
+    }
+}
+
+
+
+
 
 
 const sendEnquiry = async (req, res) => {
