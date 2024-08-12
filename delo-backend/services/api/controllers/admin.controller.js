@@ -10,8 +10,6 @@ import { cvMail, sendMail } from '../helper/emailNotification.js'
 import Quotation from '../models/quotation.model.js'
 import Files from '../models/usercv.model.js'
 dotenv.config()
-
-
 const crypto = new Crypto(process.env.DECRYPT_KEY);
 
 const signupAdmin = async (req, res) => {
